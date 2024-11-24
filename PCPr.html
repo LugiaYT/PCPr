@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Coffee</title>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+    
+           /*Danh Mục CSS [QUAN TRỌNG]*/
+    /*Được CHỈNH SỬA và HOÀN THIỆN phù hợp với HTML bởi CHATGPT*/
+    
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3e9dc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+    
+        /* Header */
+            header {
+              background-color: #6a4c38;
+              padding: 20px 0;
+              text-align: center;
+              color: white;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Giúp header cố định */
+    top: 0; /* Khoảng cách từ header đến mép trên */
+    z-index: 1000; /* Đảm bảo header luôn nằm trên các phần tử khác */
+}
+            header {
+    background-color: rgba(106, 76, 56, 1); /* Màu nền dạng RGBA */
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Thêm hiệu ứng mượt */
+}
+        /* CSS cho header khi bình thường */
+header {
+    background-color: #6a4c38;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s ease; /* Thêm hiệu ứng khi thay đổi kích thước */
+}
+
+header.shrink {
+    padding: 10px 0; /* Khi cuộn, giảm padding của header */
+}
+
+/* Giảm kích thước logo và font chữ khi header thu nhỏ */
+header.shrink .logo {
+    font-size: 1.5rem;
+}
+    
+    
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            font-size: 1.2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f3e9dc;
+        }
+
+        /* Banner */
+        .banner {
+            width: 100%;
+            height: 20vh; /* Điều chỉnh chiều cao để chiếm 1/5 giao diện */
+            background-image: url('https://t3.ftcdn.net/jpg/07/38/76/00/360_F_738760043_gtdfSF1vMevJ4fiYY4t7H1I6FK8EbwYp.jpg');
+            background-position: center;
+            background-size: cover;
+            position: relative;
+                 }
+
+            .banner h1 {
+                position: absolute;
+                  top: 50%;
+                  left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 2rem; /* Giảm kích thước font chữ để phù hợp với kích thước banner nhỏ hơn */
+                text-align: center; /* Căn Chỉnh vị trí nè:)*/
+                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /*Phần này là thuộc tính text bao gồm kích cỡ (px) và màu sắc đổ bóng  */
+                font-weight: 700;
+                        }
+
+         /* Responsive styles : THUỘC TÍNH*/
+          @media (max-width: 768px) {
+          .banner {
+            height: 25vh; /* Tăng chiều cao cho màn hình máy tính bảng */
+                  }
+          .banner h1 {
+             font-size: 2rem;
+                      }
+                                    }
+
+          @media (max-width: 480px) {
+          .banner {
+             height: 30vh; /* Tăng chiều cao cho màn hình điện thoại */
+                  }
+          .banner h1 {
+             font-size: 1.5rem;
+                     }
+                                    }
+
+        /* Menu Section <DANH MỤC> */
+        .menu-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-section h2 {
+            font-size: 2rem;
+            color: #6a4c38;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    
+        .menu-item h3 {
+            font-size: 1.5rem;
+            color: #6a4c38;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .menu-item button {
+            background-color: #6a4c38;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item button:hover {
+            background-color: #4e3a2e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #322014;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+               }
+    
+        footer p {
+            font-size: 1rem;
+                 }
+    
+    
+       /* Comment Section: BÌNH LUẬN */
+        .comment-section {
+          background-color: #fff;
+          padding: 40px 20px;
+          text-align: center;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 40px;
+                          }
+
+        .comment-section h2 {
+          font-size: 2rem;
+          color: #6a4c38;
+          margin-bottom: 20px;
+          font-weight: 700;
+                             }
+
+        #comment-form {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 30px;
+          align-items: center;
+                       }
+
+          #user-name {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+                      }
+
+          #user-name:focus {
+            border-color: #6a4c38;
+            background-color: #fff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(106, 76, 56, 0.5);
+                            }
+
+          #comment-input {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 10px;
+                          }
+  /*THUỘC TÍNH BUTTON*/
+#comment-form button {
+    background-color: #6a4c38;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+    background-color: #4e3a2e;
+}
+
+#comments-list {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.comment span {
+    font-size: 0.9rem;
+    color: #888;
+}
+    /* CSS để trang trí hình ảnh và video */
+.comment img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.comment video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+      /* Dark Mode Styles: CHẾ ĐỘ TỐI */
+         body.dark-mode {
+              background-color: #121212;
+              color: white;
+                        }
+
+         header.dark-mode {
+              background-color: #333;
+    }
+
+         footer.dark-mode {
+              background-color: #1e1e1e;
+    }
+
+         .banner.dark-mode {
+              background-color: #333;
+    }
+
+          .menu-section.dark-mode {
+              background-color: #2c2c2c;
+    }
+
+          .menu-item.dark-mode {
+              background-color: #444;
+    }
+
+          .menu-item button.dark-mode {
+              background-color: #555;
+    }
+    
+    
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Phoenix Coffee</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#comments">Comments</a>
+        </nav>
+    </header>
+    <!-- Nút chuyển chế độ Dark Mode -->
+  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #6a4c38; color: white; border: none; border-radius: 5px; cursor: pointer;">Switch Mode</button>
+ 
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Welcome to Phoenix Coffee</h1>
+    </div>
+
+    <!-- Menu Section -->
+    <div class="menu-section" id="menu">
+        <h2>MAIN MENU</h2>
+        <div class="menu-grid">
+            <!-- Menu Item 1 -->
+            <div class="menu-item">
+                <img src="https://statics.vinwonders.com/Vietnamese-Milk-Tea-thumb_1701612798.jpg" alt="Milk Tea">
+                <h3>Milk Tea</h3>
+                <p style="color:#e62e00"><sup style="color:#a8132e"><b><i>Sale</i></b></sup><b>15.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+            <!-- Menu Item 2 -->
+            <div class="menu-item">
+                <img src="https://cubes-asia.com/storage/blogs/2023/cafe-americano.jpg" alt="Coffee">
+                <h3>Coffee</h3>
+                <p style="color:#e62e00"><b>15.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+            <!-- Menu Item 3 -->
+            <div class="menu-item">
+                <img src="https://static.hawonkoo.vn/hwk02/images/2023/09/nuoc-ep-trai-cay.jpg" alt=Nước-Ép">
+                <h3>Nước Ép</h3>
+                <p style="color:#e62e00"><b>15.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+            <!-- Menu Item 4 -->
+            <div class="menu-item">
+                <img src="https://channel.vcmedia.vn/prupload/439/2016/12/img20161223224942576.jpg" alt="Matcha">
+                <h3>Matcha</h3>
+                <p style="color:#e62e00"><b>15.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+            <!-- Menu Item 5 -->
+            <div class="menu-item">
+                <img src="https://www.assamicaagro.in/cdn/shop/articles/Untitled_design_26_1000x1000.png?v=1592799889" alt="Tea">
+                <h3>Tea</h3>
+                <p style="color:#e62e00"><b>10.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+            <!-- Menu Item 6 -->
+            <div class="menu-item">
+                <img src="https://cdn.tgdd.vn/Files/2019/11/20/1220418/3-cach-pha-cacao-nong-thom-ngon-don-gian-va-nhanh-chong-12.jpg" alt="Cacao">
+                <h3>CaCao</h3>
+                <p style="color:#e62e00"><b>15.000 VNĐ</b></p>
+                <button>Xem Thêm</button>
+            </div>
+        </div>
+    </div>
+    <!-- Comment Section -->
+<div class="comment-section" id="comments">
+    <h2>Nhận Xét / Comment </h2>
+    <form id="comment-form" enctype="multipart/form-data">
+        <input type="text" id="user-name" placeholder="Enter your name" required>
+        <textarea id="comment-input" placeholder="Enter your comment..." rows="4" required></textarea>
+        <input type="file" id="file-input" accept="image/*,video/*" />
+        <button type="submit">Post Comment</button>
+    </form>
+    <div id="comments-list">
+        <!-- Bình luận sẽ hiển thị ở đây -->
+    </div>
+</div>
+    
+    <!--  -->
+    <!-- ABOUT -->
+    <div class="about" id="about">
+        <h1>ABOUT</h1>
+        <p>WEBSITE tạo ra với mục đích THỬ NGHIỆM,chưa được hoàn thiện =)) xin chờ nhé...</p>
+    </div>
+    <!--  -->
+    <!--  -->
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Phoenix Coffee | Designed with HTML EDITOR❤️ :></p>
+    </footer>
+    
+    
+    
+     <!--/* JS Thực Hiện THAO TÁC [QUAN TRỌNG]*/
+    
+    <!-- JavaScript -->
+    
+        <!-- JS Comment --> 
+    <script>
+    document.getElementById('comment-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Lấy tên người dùng và nội dung bình luận
+        var userName = document.getElementById('user-name').value.trim();
+        var commentText = document.getElementById('comment-input').value.trim();
+        var fileInput = document.getElementById('file-input');
+        var file = fileInput.files[0]; // Lấy tệp được chọn
+
+        // Kiểm tra nếu tên hoặc bình luận trống
+        if (userName === "") {
+            alert("Please enter your name.");
+            return;
+        }
+        if (commentText === "" && !file) {
+            alert("Please enter a comment or upload a file.");
+            return;
+        }
+
+        // Tạo phần tử bình luận mới
+        var commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        
+        // Thêm tên và nội dung bình luận
+        commentDiv.innerHTML = `
+            <p><strong>${userName}</strong>: ${commentText}</p>
+            <span>Posted just now</span>
+        `;
+
+        // Xử lý và hiển thị tệp hình ảnh hoặc video [nếu có]
+        if (file) {
+            var fileURL = URL.createObjectURL(file); // Tạo URL tạm cho tệp
+            var fileElement;
+
+            if (file.type.startsWith("image/")) {
+                // Nếu là hình ảnh
+                fileElement = document.createElement('img');
+                fileElement.src = fileURL;
+                fileElement.alt = "Uploaded image";
+                fileElement.style.maxWidth = "100%";
+                fileElement.style.borderRadius = "10px";
+                fileElement.style.marginTop = "10px";
+            } else if (file.type.startsWith("video/")) {
+                // Nếu là video
+                fileElement = document.createElement('video');
+                fileElement.src = fileURL;
+                fileElement.controls = true;
+                fileElement.style.maxWidth = "100%";
+                fileElement.style.borderRadius = "10px";
+                fileElement.style.marginTop = "10px";
+            }
+
+            // Thêm hình ảnh hoặc video vào bình luận
+            commentDiv.appendChild(fileElement);
+        }
+
+        // Thêm bình luận vào danh sách
+        document.getElementById('comments-list').appendChild(commentDiv);
+
+        // Xóa nội dung các trường nhập và tệp sau khi gửi
+        document.getElementById('user-name').value = '';
+        document.getElementById('comment-input').value = '';
+        fileInput.value = ''; // Xóa tệp đã chọn
+    });
+      </script>
+    
+    <!-- JS NÚT Bấm DARKMODE -->
+      <script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    const body = document.body;
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const banner = document.querySelector('.banner');
+    const menuItems = document.querySelectorAll('.menu-item');
+    const menuSection = document.querySelector('.menu-section');
+
+    toggleButton.addEventListener('click', () => {
+        // Thay đổi class 'dark-mode' cho các phần tử
+        body.classList.toggle('dark-mode');
+        header.classList.toggle('dark-mode');
+        footer.classList.toggle('dark-mode');
+        banner.classList.toggle('dark-mode');
+        menuSection.classList.toggle('dark-mode');
+        
+        // Áp dụng chế độ tối cho từng menu-item
+        menuItems.forEach(item => {
+            item.classList.toggle('dark-mode');
+            const button = item.querySelector('button');
+            if (button) {
+                button.classList.toggle('dark-mode');
+            }
+        });
+
+        // Cập nhật văn bản nút chuyển chế độ
+        if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'Switch to Light Mode';
+        } else {
+            toggleButton.textContent = 'Switch to Dark Mode';
+        }
+    });
+        </script>
+    
+    <!-- JavaScript : ĐỘ MỜ HEADER-->
+    <script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const scrollPosition = window.scrollY; // Vị trí cuộn của trang
+        const maxOpacityScroll = 300; // Khoảng cách tối đa để hiệu ứng áp dụng
+
+        // Tính toán giá trị opacity dựa trên vị trí cuộn
+        let opacity = Math.max(0.5, 1 - scrollPosition / maxOpacityScroll);
+
+        // Áp dụng opacity vào header
+        header.style.backgroundColor = `rgba(106, 76, 56, ${opacity})`;
+    });
+</script>
+    
+    <!-- JavaScript : THEO DÕI HEADER-->
+    <script>
+    window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    const logo = document.querySelector('.logo');
+    
+    if (window.scrollY > 100) {  // Khi cuộn trang xuống dưới 100px
+        header.classList.add('shrink');
+    } else {
+        header.classList.remove('shrink');
+    }
+});
+    </script>
+    
+    <!-- JavaScript : THÊM-->
+    
+</body>
+</html>
